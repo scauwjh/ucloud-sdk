@@ -92,7 +92,7 @@ public class SignatureUtil {
     private static String canonicalizedUcloudHeaders(HttpRequest request) {
         List<Map.Entry<String, String>> headers = request.headers().entries();
         Map<String, List<String>> params = Maps.newHashMap();
-        headers.stream().forEach(e -> {
+        for (Map.Entry<String, String> e : headers) {
             String key = e.getKey().toLowerCase();
             if (key.startsWith("x-ucloud-")) {
                 String value = e.getValue();
@@ -102,12 +102,12 @@ public class SignatureUtil {
                     values.add(value);
                 }
             }
-        });
+        }
 
         StringBuilder sb = new StringBuilder();
         List<String> keyList = Lists.newArrayList(params.keySet());
         Collections.sort(keyList);
-        keyList.stream().forEach(k -> {
+        for (String k : keyList) {
             List<String> values = params.get(k);
             sb.append(k).append(":");
             boolean isFirst = true;
@@ -120,7 +120,7 @@ public class SignatureUtil {
                 }
             }
             sb.append("\n");
-        });
+        }
         return sb.toString();
     }
 
