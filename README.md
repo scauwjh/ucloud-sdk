@@ -10,4 +10,11 @@ maven 依赖
 * commons-codec 1.10
 * junit 3.8.1
 
-
+usage:
+------
+> 
+<dependency>
+    <groupId>me.keiwu</groupId>
+    <artifactId>ucloud-sdk</artifactId>
+    <version>1.0.0</version>
+</dependency>
