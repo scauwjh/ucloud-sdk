@@ -12,9 +12,10 @@ maven 依赖
 
 usage:
 ------
-> 
+```
 <dependency>
     <groupId>me.keiwu</groupId>
     <artifactId>ucloud-sdk</artifactId>
     <version>1.0.0</version>
 </dependency>
+```
